@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="BallGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-mF-tiO">
+                                <rect key="frame" x="16" y="71" width="41" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="bold"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onRestartGame" destination="BV1-FR-VrT" eventType="touchUpInside" id="uEp-Ta-w9T"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="uhr-l6-sP9">
+                                <rect key="frame" x="16" y="225.66666666666663" width="361" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BallGame" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="xVe-Ll-o9e">
+                                        <rect key="frame" x="57.333333333333329" y="0.0" width="246.66666666666669" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="lTj-HL-Mj1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-qi-rw6">
+                                        <rect key="frame" x="120.66666666666666" y="370" width="120" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="oap-oR-Gdo"/>
+                                            <constraint firstAttribute="height" constant="56" id="p9L-iY-9cV"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onStartButtonClick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="iU7-cb-IZE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="uhr-l6-sP9" secondAttribute="trailing" constant="16" id="FW9-Nc-GR4"/>
+                            <constraint firstItem="0fU-mF-tiO" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="12" id="Zai-0U-ecw"/>
+                            <constraint firstItem="uhr-l6-sP9" firstAttribute="centerY" secondItem="4qk-I5-YsI" secondAttribute="centerY" id="nfK-mD-xF2"/>
+                            <constraint firstItem="0fU-mF-tiO" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="s45-yO-bhA"/>
+                            <constraint firstItem="uhr-l6-sP9" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="zWa-ln-dJG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="0fU-mF-tiO" id="FWt-lX-qaJ"/>
+                        <outlet property="startView" destination="uhr-l6-sP9" id="0VF-eW-t4x"/>
+                        <segue destination="33p-Hp-2ZK" kind="modal" identifier="goToResultWindowTag" modalPresentationStyle="currentContext" id="XxM-qR-3H0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="yKq-LH-tf9">
+            <objects>
+                <viewController id="33p-Hp-2ZK" customClass="ResultViewController" customModule="BallGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YxA-y6-kHE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="w8Q-n4-ciy">
+                                <rect key="frame" x="16" y="213" width="361" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="fut-Oc-fHB">
+                                        <rect key="frame" x="99" y="0.0" width="163" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="PWT-jq-PC8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sge-PY-Jbb">
+                                        <rect key="frame" x="152.66666666666666" y="370" width="56" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="1xe-Cc-caM"/>
+                                            <constraint firstAttribute="width" constant="56" id="3dM-w1-Rtp"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="onExitButtonClick:" destination="33p-Hp-2ZK" eventType="touchUpInside" id="hDc-Q0-mzL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Bu-AH-Jpi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Bu-AH-Jpi" firstAttribute="trailing" secondItem="w8Q-n4-ciy" secondAttribute="trailing" constant="16" id="TxY-EZ-k1Y"/>
+                            <constraint firstItem="w8Q-n4-ciy" firstAttribute="centerY" secondItem="0Bu-AH-Jpi" secondAttribute="centerY" id="eLP-Hw-wYe"/>
+                            <constraint firstItem="w8Q-n4-ciy" firstAttribute="leading" secondItem="0Bu-AH-Jpi" secondAttribute="leading" constant="16" id="xG6-MR-8aK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fXY-s2-tMA"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="fut-Oc-fHB" id="hKy-99-9l7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbN-qE-QYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="-35"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
